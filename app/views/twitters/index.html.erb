@@ -1,0 +1,7 @@
+<h1>つぶやき一覧</h1>
+
+<% @twitters.each do |twitter| %>
+  <p>つぶやき：<%= twitter.content%></p>
+<% end%>
+
+<%= link_to 'つぶやく',new_twitter_path%>
