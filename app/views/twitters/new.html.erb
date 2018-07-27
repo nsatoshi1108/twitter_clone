@@ -1,2 +1,15 @@
-<h1>Twitters#new</h1>
-<p>Find me in app/views/twitters/new.html.erb</p>
+<div class="title">
+  <h1>新しくつぶやく</h1>
+</div>
+
+<div class="tweet_panel">
+  <%= form_with(model: @twitter, url: confirm_twitters_path, local: true) do |form|%>
+  <div class="tweet">
+    <%= form.label :content%>
+    <%= form.text_field :content%>
+  </div>
+  <div class="submit">
+  <%= form.submit%>
+  </div>
+  <% end%>
+</div>

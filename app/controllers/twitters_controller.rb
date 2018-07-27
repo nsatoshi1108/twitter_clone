@@ -7,6 +7,7 @@ class TwittersController < ApplicationController
   end
 
   def new
+    @twitter = Twitter.new
   end
 
   def confirm

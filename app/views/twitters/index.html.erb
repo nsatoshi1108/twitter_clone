@@ -1,7 +1,14 @@
-<h1>つぶやき一覧</h1>
+<div class="title">
+  <h1>つぶやき一覧</h1>
+</div>
 
-<% @twitters.each do |twitter| %>
-  <p>つぶやき：<%= twitter.content%></p>
-<% end%>
+<div class="tweet_panel">
+  <% @twitters.each do |twitter| %>
+  <div class="tweet_list">
+    <p>つぶやき</p>
+    <p><%= twitter.content%></p>
+  </div>
+  <% end%>
 
-<%= link_to 'つぶやく',new_twitter_path%>
+  <%= link_to 'つぶやく',new_twitter_path%>
+</div>
