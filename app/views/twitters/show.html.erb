@@ -1,2 +1,7 @@
-<h1>Twitters#show</h1>
-<p>Find me in app/views/twitters/show.html.erb</p>
+<div class="title">
+  <p>内容をみる</p>
+</div>
+
+<p>内　容　：<%= @twitter.content%></p>
+
+<%= link_to 'つぶやき一覧に戻る',twitters_path%>
