@@ -1,2 +1,13 @@
-<h1>Twitters#confirm</h1>
-<p>Find me in app/views/twitters/confirm.html.erb</p>
+<div class="title">
+  <h1>つぶやきを確認する</h1>
+</div>
+
+<%= form_with(model: @twitter, url: twitters_path, local:true) do |form|%>
+
+  <%= form.hidden_field :content%>
+
+  <p>内容：<%= @twitter.content%></p>
+
+  <%= form.submit '登録する'%>
+
+<% end%>

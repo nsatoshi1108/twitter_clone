@@ -11,9 +11,16 @@ class TwittersController < ApplicationController
   end
 
   def confirm
+    @twitter = Twitter.new(twitter_params)
   end
 
   def create
+    @twitter = Twitter.new(twitter_params)
+    if @twitter.save
+      redirect_to twitters_path
+    else
+      render 'new'
+    end
   end
 
   def top
