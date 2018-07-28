@@ -7,11 +7,16 @@ class TwittersController < ApplicationController
   end
 
   def new
-    @twitter = Twitter.new
+    if params[:back]
+      @twitter = Twitter.new(twitter_params)
+    else
+      @twitter = Twitter.new
+    end
   end
 
   def confirm
     @twitter = Twitter.new(twitter_params)
+    render :new if @twitter.invalid?
   end
 
   def create

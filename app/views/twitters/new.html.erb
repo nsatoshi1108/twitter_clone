@@ -4,6 +4,18 @@
 
 <div class="tweet_panel">
   <%= form_with(model: @twitter, url: confirm_twitters_path, local: true) do |form|%>
+  <% if @twitter.errors.any?%>
+      <div id="error_explanation">
+        <h2><%= @twitter.errors.count %>件のエラーがあります。</h2>
+        <ul>
+          <% @twitter.errors.full_messages.each do |msg|%>
+          <li><%= msg%></li>
+        <% end%>
+        </ul>
+
+      </div>
+    <% end%>
+
   <div class="tweet">
     <%= form.label :content%>
     <%= form.text_field :content%>
