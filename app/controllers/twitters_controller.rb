@@ -30,6 +30,11 @@ class TwittersController < ApplicationController
   end
 
   def update
+    if @twitter.update(twitter_params)
+      redirect_to twitters_path
+    else
+      render 'edit'
+    end 
   end
 
   def edit
