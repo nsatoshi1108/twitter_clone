@@ -10,7 +10,7 @@
     <div class="twitter_links">
       <%= link_to '詳しく見る',twitter_path(twitter.id)%>
       <%= link_to '編集する',edit_twitter_path(twitter.id)%>
-      <%= link_to '削除する',twitters_path(twitter.id),method: :delete,data: {confirm:'本当に削除しますか？'}%>
+      <%= link_to '削除する',twitter_path(twitter.id),method: :delete,data: {confirm:'本当に削除しますか？'}%>
     </div>
   </div>
   <% end%>

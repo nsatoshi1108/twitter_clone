@@ -34,13 +34,15 @@ class TwittersController < ApplicationController
       redirect_to twitters_path
     else
       render 'edit'
-    end 
+    end
   end
 
   def edit
   end
 
   def destroy
+    @twitter.destroy
+    redirect_to twitters_path
   end
 
   private
